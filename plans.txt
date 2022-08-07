@@ -1,0 +1,84 @@
+To make a commandogatchi, here is what is needed:
+
+a. a menu to choose: continue / new / hall of fame
+b. a commandogatchi with stats that can be check and reported on
+
+****************************************************************
+####1. Eggs####
+
+Eggs that can hatch themselves into random monsters. A library or database of monsters needs to be created.
+
+
+####1.1 The commandogatchi:####
+
+Has a hunger meter.
+Has a happiness meter.
+Has a health meter.
+Has a growth meter.
+Has a weight meter.
+Has a discipline meter.
+
+The commandogatchi will notify the user when it is in need of
+attention. The user must respond correctly in order to care for
+the commandogatchi.
+
+
+***************************************************************
+
+####2. Food####
+Meals - fill up 1 hunger point.
+Snacks - adds 1 happiness point and 2 weight points.
+
+
+####3. Lights####
+The lights need to be turned off when the commandogatchi is sleeping.
+
+
+####4. Games####
+Number guessing game.
+
+
+####5. Medicine####
+Administer medicine to the commandogatchi to cure sickness.
+Commandogatchis can become sick if they poop and the user does
+not clean the poop up for a long time.
+
+
+####6. Bath####
+Give a bath to the commandogatchi to clear its living area of waste.
+
+
+####7. Information Card####
+The information card will hold information about the commandogatchi's
+- name
+- age
+- weight
+- discipline level
+- happiness level
+- hunger level
+
+
+####8. Discipline####
+If the commandogatchi yells for attention for no reason, it must
+be disciplined. Also, if the commandogatchi does not eat when the
+user gives it food, it must be disciplined. The same is true if the
+commandogatchi does not want to play games. Discipline it!
+
+
+####9. Daemon####
+Include some kind of daemon tool so that the commandogatchi can
+notify the user that it is in need of attention.
+
+
+####10. Victory / Failure####
+If a user takes good care of their commandogatchi, it will grow into
+an adult and fly away to its home planet.
+
+If a user does not care for the commandogatchi, it will die.
+
+
+####11. Scoreboard / Hall of Fame####
+Keep record of all commandogatchi's that have lived, died, and 
+flown away, along with all the interesting stats (stats like: How
+many times did the commandogatchi poop? How many times did it
+get sick? How many meals did it eat? And so on...
