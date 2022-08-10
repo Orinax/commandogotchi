@@ -6,7 +6,8 @@ b. a commandogatchi with stats that can be check and reported on
 ****************************************************************
 ####1. Eggs####
 
-Eggs that can hatch themselves into random monsters. A library or database of monsters needs to be created.
+Eggs that can hatch themselves into random monsters. A library or database of
+monsters needs to be created.
 
 
 ####1.1 The commandogatchi:####
