@@ -1,5 +1,5 @@
 class Commandogotchi:
-    def __init__(self, name, age, hunger=0, happiness=0, health=0,
+    def __init__(self, name, age=0, hunger=0, happiness=0, health=0,
                 growth=0, weight=0, discipline=0):
         self.name = name
         self.age = age
