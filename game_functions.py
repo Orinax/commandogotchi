@@ -1,5 +1,4 @@
-from commandogotchi import Commandogotchi
-import game_functions as gf
+import commandogotchi as cg
 
 
 def create_start_menu():
@@ -24,25 +23,34 @@ def start_menu_selections():
     Option (2) allows a user to start a new game.
     Option (3) allows a user to view the Hall of Fame."""
 
-    # User
+    # Ask the user to choose a menu option.
     menu_choice = input(">>> ")
     print(f"You chose option {menu_choice}")
 
+    # Choosing 1 will load a file? that will continue a save?
     if int(menu_choice) == 1:
-        # insert code here to get a new game running.
-    if int(menu_choice) == 2:
-        # fix this: Need a loop, not a function within a function.
-        def choose_a_name():
+        # insert code here to continue a previously started game.
+        pass
+    # Choosing 2 will create a new instance of a commandogotchi.
+    elif int(menu_choice) == 2:
+        # Maybe clean this up later and put it all in a function?
+        while True:
             chosen_name = input("Enter a name for your commandogotchi: ")
-            confirm_name = input(f"Is ""{chosen_name}"" correct? (y/n):")
-            if confirm_name ==
-        cogo = gf.create_commandogotchi(chosen_name)
-    else:
+            confirm_name = input(f"Is {chosen_name} correct? (y/n):")
+            if confirm_name == "y":
+                # cogo is short for 'commandogotchi'.
+                cogo = cg.Commandogotchi(chosen_name)
+                return cogo
+                break
+            elif confirm_name == "n":
+                pass
+    # Choosing 3 will open a hall of fame to show stats from games past.
+    elif int(menu_choice) == 3:
+        # insert code here to create or show a hall of fame.
         pass
 
 
 # Create an instance of a commandogotchi.
 # Cogo is short for 'commandogotchi'.
-def create_commandogotchi(chosen_name):
-    cogo = Commandogotchi(chosen_name)
-    return cogo
+# def create_commandogotchi(chosen_name):
+#    cg.Commandogotchi(chosen_name)
