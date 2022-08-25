@@ -26,31 +26,37 @@ def start_menu_selections():
     # Ask the user to choose a menu option.
     menu_choice = input(">>> ")
     print(f"You chose option {menu_choice}")
-
-    # Choosing 1 will load a file? that will continue a save?
-    if int(menu_choice) == 1:
-        # insert code here to continue a previously started game.
-        pass
-    # Choosing 2 will create a new instance of a commandogotchi.
-    elif int(menu_choice) == 2:
-        # Maybe clean this up later and put it all in a function?
-        while True:
-            chosen_name = input("Enter a name for your commandogotchi: ")
-            confirm_name = input(f"Is {chosen_name} correct? (y/n):")
-            if confirm_name == "y":
-                # cogo is short for 'commandogotchi'.
-                cogo = cg.Commandogotchi(chosen_name)
-                return cogo
-                break
-            elif confirm_name == "n":
-                pass
-    # Choosing 3 will open a hall of fame to show stats from games past.
-    elif int(menu_choice) == 3:
-        # insert code here to create or show a hall of fame.
-        pass
+    return int(menu_choice)
 
 
-# Create an instance of a commandogotchi.
-# Cogo is short for 'commandogotchi'.
-# def create_commandogotchi(chosen_name):
-#    cg.Commandogotchi(chosen_name)
+# Choosing 1 will load a file? that will continue a save?
+def continue_game():
+    """This will continue a previously started game."""
+    pass
+    # insert code here to continue a previously started game.
+
+
+def new_game():
+    """This creates a new instance of a commandogotchi."""
+    while True:
+        chosen_name = input("Enter a name for your commandogotchi: ")
+        confirm_name = input(f"Is {chosen_name} correct? (y/n):")
+        if confirm_name == "y":
+            # cogo is short for 'commandogotchi'.
+            cogo = cg.Commandogotchi(chosen_name)
+            print(f'''
+                  Congratulations! {chosen_name} will hatch from an egg
+                  soon. Please take good care of {chosen_name} and do not
+                  let {chosen_name} die.
+                  ''')
+            return cogo
+            break
+        elif confirm_name == "n":
+            pass
+
+
+def view_hof():
+    """This allows a user to view records of all commandogotchis that have
+    been cared for in the past."""
+    # insert code here to create or show a hall of fame.
+    pass
