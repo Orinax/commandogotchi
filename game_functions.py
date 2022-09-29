@@ -1,4 +1,5 @@
 import commandogotchi as cg
+import game_messages as msg
 
 
 def create_start_menu():
@@ -36,7 +37,7 @@ def continue_game():
     # insert code here to continue a previously started game.
 
 
-def new_game():
+def new_game(msg):
     """This creates a new instance of a commandogotchi."""
     while True:
         chosen_name = input("Enter a name for your commandogotchi: ")
@@ -44,11 +45,12 @@ def new_game():
         if confirm_name == "y":
             # cogo is short for 'commandogotchi'.
             cogo = cg.Commandogotchi(chosen_name)
-            print(f'''
-                  Congratulations! {chosen_name} will hatch from an egg
-                  soon. Please take good care of {chosen_name} and do not
-                  let {chosen_name} die.
-                  ''')
+            msg.named_egg_msg(chosen_name)
+#            print(f'''
+#                  Congratulations! {chosen_name} will hatch from an egg
+#                  soon. Please take good care of {chosen_name} and do not
+#                  let {chosen_name} die.
+#                  ''')
             return cogo
             break
         elif confirm_name == "n":
