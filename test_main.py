@@ -2,6 +2,6 @@
 # Ask Nathan for the better way to test things out.
 from game_maps import *
 
-a = grid(5, 2)
-b = get_number_columns(a)
-print(b)
+a = create_coordinates(5)
+b = create_grid(a, create_row)
+#print(b)
