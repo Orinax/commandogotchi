@@ -25,6 +25,7 @@ def create_grid(list, create_row):
     row_number = 0
     available_rows = list[-1][1]
 
+    grid = []
     for item in list:
 
         if item[1] < available_rows:
@@ -32,5 +33,7 @@ def create_grid(list, create_row):
             if not created_row:
                 pass
             else:
-                print(created_row)
+               # print(created_row)
+                grid.append(created_row)
             row_number += 1
+    return grid

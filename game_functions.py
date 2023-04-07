@@ -2,6 +2,7 @@ import commandogotchi as cg
 import game_messages as msg
 
 
+
 def create_start_menu():
     """Create a starting menu for the game."""
     # Create a menu with choices for players.
@@ -37,24 +38,27 @@ def continue_game():
     # insert code here to continue a previously started game.
 
 
-def new_game(msg):
+def new_game(msg, sleep):
     """This creates a new instance of a commandogotchi."""
     while True:
         chosen_name = input("Enter a name for your commandogotchi: ")
         confirm_name = input(f"Is {chosen_name} correct? (y/n):")
         if confirm_name == "y":
-            # cogo is short for 'commandogotchi'.
-            cogo = cg.Commandogotchi(chosen_name)
+            # Instantiate the commandogotchi object.
+            cogo = create_commandogotchi(chosen_name)
+            # Call the message function to introduce new commandogotchi.
             msg.named_egg_msg(chosen_name)
-#            print(f'''
-#                  Congratulations! {chosen_name} will hatch from an egg
-#                  soon. Please take good care of {chosen_name} and do not
-#                  let {chosen_name} die.
-#                  ''')
+            sleep(5)
             return cogo
             break
         elif confirm_name == "n":
             pass
+
+
+def create_commandogotchi(chosen_name):
+        # cogo is short for 'commandogotchi'.
+        cogo = cg.Commandogotchi(chosen_name)
+        return cogo
 
 
 def view_hof():
@@ -62,3 +66,16 @@ def view_hof():
     been cared for in the past."""
     # insert code here to create or show a hall of fame.
     pass
+
+
+def hatch_egg(cogo, ai, sleep):
+    hatch_messages = ["A new egg! Cool! What will hatch from it?",
+                      "Hmm, is hasn't hatched yet, but it should soon.",
+                      "Oh look! The egg is moving!",
+                      "There are cracks on the egg! Any minute now!",
+                      "...",
+                     ]
+    for message in ai(hatch_messages):
+        print(message)
+        sleep(5)
+    print(f"Look! {cogo.name} has hatched from an egg!")
