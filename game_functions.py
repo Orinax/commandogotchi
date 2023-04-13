@@ -1,6 +1,6 @@
 import commandogotchi as cg
 import game_messages as msg
-
+import datetime as dt
 
 
 def create_start_menu():
@@ -38,7 +38,7 @@ def continue_game():
     # insert code here to continue a previously started game.
 
 
-def new_game(msg, sleep):
+def new_game(sleep):
     """This creates a new instance of a commandogotchi."""
     while True:
         chosen_name = input("Enter a name for your commandogotchi: ")
@@ -48,7 +48,7 @@ def new_game(msg, sleep):
             cogo = create_commandogotchi(chosen_name)
             # Call the message function to introduce new commandogotchi.
             msg.named_egg_msg(chosen_name)
-            sleep(5)
+            sleep(1)
             return cogo
             break
         elif confirm_name == "n":
@@ -56,9 +56,10 @@ def new_game(msg, sleep):
 
 
 def create_commandogotchi(chosen_name):
-        # cogo is short for 'commandogotchi'.
-        cogo = cg.Commandogotchi(chosen_name)
-        return cogo
+    """Instantiate a Commandogotchi. This will create a new 'cogo'
+    for the user to play with. Cogo is short for 'commandogotchi'."""
+    cogo = cg.Commandogotchi(chosen_name)
+    return cogo
 
 
 def view_hof():
@@ -69,13 +70,20 @@ def view_hof():
 
 
 def hatch_egg(cogo, ai, sleep):
-    hatch_messages = ["A new egg! Cool! What will hatch from it?",
-                      "Hmm, is hasn't hatched yet, but it should soon.",
-                      "Oh look! The egg is moving!",
-                      "There are cracks on the egg! Any minute now!",
-                      "...",
-                     ]
+    """Hatch a new commandogotchi egg via messages and progress bars."""
+    hatch_messages = msg.hatch_messages()
     for message in ai(hatch_messages):
         print(message)
-        sleep(5)
+        sleep(.5)
     print(f"Look! {cogo.name} has hatched from an egg!")
+
+
+def check_cogo_stats(cogo):
+    choice = input(f"What would you like to know about {cogo.name}? ")
+    # show menu of choices
+    # use an elif block to call other functions to show stats.
+    if choice == "name":
+        print(cogo.name)
+    elif choice == "age":
+        current_age = cogo.update_age(cogo.age, cogo.birth_time)
+        print(current_age)
